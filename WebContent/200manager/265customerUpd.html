@@ -1,28 +1,64 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
-      th:replace="~{commons/layout :: layout(~{::body})}">
+<html>
 <head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="box">
-<h3>顧客変更</h3>
-	<span th:text="${errormessage}" th:class="error"></span>
-	<form th:action="@{/Mgr/customerUpdConf}" th:object="${customerForm}" method="post">
-		<input type="hidden" name="customerCode" th:value="*{customerCode}"/>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
+
+	<div class="box" id="menu">
+		<span>ユーザ名さん</span>
+
+		<!-- マネージャメニュー  -->
+		<form action="210salesList.html" method="get" >
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+		<form action="260customerList.html" method="get">
+			<button type="submit" class="menuBtn">顧客一覧</button>
+		</form>
+		<form action="220itemList.html" method="get">
+			<button type="submit" class="menuBtn">商品一覧</button>
+		</form>
+		<form action="240itemGenreList.html" method="get">
+			<button type="submit" class="menuBtn">商品区分一覧</button>
+		</form>
+
+<!-- ユーザメニュー 
+		<form action="300staff/310salesList.html" method="get">
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+-->
+
+		<!-- 共通メニュー  -->
+		<form action="../000login.html" method="get">
+			<button type="submit" class="menuBtn">ログアウト</button>
+		</form>
+	</div>
+	
+	<div class="box" id="content">
+		<h3>顧客変更</h3>
+		<span class="error">エラーメッセージ表示</span>
+		<form action="266customerUpdConf.html" method="post">
 		<table>
 			<tr>
 				<th>顧客コード</th>
-				<td class="left" th:text="*{customerCode}"/>
+				<td class="left">12345678</td>
 			</tr>
 			<tr>
 				<th>顧客名</th>
-				<td><input type="text" name="customerName" th:value="*{customerName}" placeholder="20文字" autofocus="autofocus"/></td>
-				<td><span th:errors="*{customerName}" th:class="error"></span></td>
+				<td><input type="text" name="customerName" value="あいうえおかきくけこさしすせそたちつてと" placeholder="20文字" autofocus="autofocus"/></td>
+				<td><span class="error">エラーメッセージ</span></td>
 			</tr>
 		</table>
 		<button type="submit" class="menuBtn">更新確認</button>
 	</form>
 </div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
 </body>
 </html>
