@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
+
+	<div class="box" id="menu">
+		<span>ユーザ名さん</span>
+
+		<!-- マネージャメニュー  -->
+		<form action="210salesList.html" method="get" >
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+		<form action="260customerList.html" method="get">
+			<button type="submit" class="menuBtn">顧客一覧</button>
+		</form>
+		<form action="220itemList.html" method="get">
+			<button type="submit" class="menuBtn">商品一覧</button>
+		</form>
+		<form action="240itemGenreList.html" method="get">
+			<button type="submit" class="menuBtn">商品区分一覧</button>
+		</form>
+
+<!-- ユーザメニュー 
+		<form action="300staff/310salesList.html" method="get">
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+-->
+
+		<!-- 共通メニュー  -->
+		<form action="../000login.html" method="get">
+			<button type="submit" class="menuBtn">ログアウト</button>
+		</form>
+	</div>
+
+	<div class="box"  id="content">
+		<h3>商品変更確認</h3>
+		<span class="error">エラーメッセージ表示</span><br>
+		<form action="220itemList.html" method="post">
+			<table>
+				<tr>
+					<th>商品コード</th>
+					<td class="left">12345678</td>
+				</tr>
+				<tr>
+					<th>商品名</th>
+					<td class="left">１２３４５６７８９０１２３４５６７８９０</td>
+				</tr>
+				<tr>
+					<th>商品区分</th>
+					<td class="left">クリアファイル</td>
+				</tr>
+				<tr>
+					<th>仕様</th>
+					<td class="left">１２３４５６７８９０</td>
+				</tr>
+				<tr>
+					<th>単価</th>
+					<td class="left">999,999,999</td>
+				</tr>
+			</table>
+			<button type="submit" class="menuBtn">変更</button>
+		</form>
+	</div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
+	<div class="box">
+		<form action="200manager/210salesList.html" method="post">
+			<h2>ログイン認証</h2>
+			<div class="error">ログインできませんでした。やり直してください。</div>
+			<table>
+				<tr>
+					<th>ユーザID</th>
+					<td><input type="text" id="username" name="username" autofocus="autofocus" class="loginInput"/></td>
+				</tr>
+				<tr>
+					<th>パスワード</th>
+					<td><input type="password" id="password" name="password" class="loginInput"/></td>
+				</tr>
+			</table>
+			<br>
+			<button type="submit" class="loginBtn">ログイン</button>
+		</form>
+	</div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
+</body>
+</html>

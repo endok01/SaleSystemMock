@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
+
+	<div class="box" id="menu">
+		<span>ユーザ名さん</span>
+
+		<!-- マネージャメニュー  -->
+		<form action="210salesList.html" method="get" >
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+		<form action="260customerList.html" method="get">
+			<button type="submit" class="menuBtn">顧客一覧</button>
+		</form>
+		<form action="220itemList.html" method="get">
+			<button type="submit" class="menuBtn">商品一覧</button>
+		</form>
+		<form action="240itemGenreList.html" method="get">
+			<button type="submit" class="menuBtn">商品区分一覧</button>
+		</form>
+
+<!-- ユーザメニュー 
+		<form action="300staff/310salesList.html" method="get">
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+-->
+
+		<!-- 共通メニュー  -->
+		<form action="../000login.html" method="get">
+			<button type="submit" class="menuBtn">ログアウト</button>
+		</form>
+	</div>
+	
+	<div class="box" id="content">
+		<h3>商品登録</h3>
+		<span class="error">エラーメッセージ表示</span>
+		<form action="222itemCreConf.html" method="post">
+			<table>
+				<tr>
+					<th>商品コード</th>
+					<td>
+						<input type="text" name="itemCode" placeholder="8文字" autofocus="autofocus" />
+					</td>
+					<td><span class="error">エラーメッセージ</span></td>
+				</tr>
+				<tr>
+					<th>商品名</th>
+					<td><input type="text" name="itemName" placeholder="1～20文字"/></td>
+					<td><span class="error">エラーメッセージ</span></td>
+				</tr>
+				<tr>
+					<th>商品区分</th>
+					<td>
+						<select>
+							<option value="00000001">コピー用紙</option>
+							<option value="00000002">クリアファイル</option>
+							<option value="00000003">付箋</option>
+						</select>
+					</td>
+					<td><span class="error">エラーメッセージ</span></td>
+				</tr>
+				<tr>
+					<th>仕様</th>
+					<td><input type="text" name="spec" placeholder="10文字以内"/></td>
+					<td><span class="error">エラーメッセージ</span></td>
+				</tr>
+				<tr>
+					<th>単価</th>
+					<td><input type="text" placeholder="数値・必須入力"/></td>
+					<td><span class="error">エラーメッセージ</span></td>
+				</tr>
+			</table>
+			<button type="submit" class="menuBtn">新規登録</button>
+		</form>
+	</div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
+</body>
+</html>

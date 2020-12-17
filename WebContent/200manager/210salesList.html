@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
+
+	<div class="box" id="menu">
+		<span>ユーザ名さん</span>
+
+		<!-- マネージャメニュー  -->
+		<form action="210salesList.html" method="get" >
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+		<form action="260customerList.html" method="get">
+			<button type="submit" class="menuBtn">顧客一覧</button>
+		</form>
+		<form action="220itemList.html" method="get">
+			<button type="submit" class="menuBtn">商品一覧</button>
+		</form>
+		<form action="240itemGenreList.html" method="get">
+			<button type="submit" class="menuBtn">商品区分一覧</button>
+		</form>
+
+<!-- ユーザメニュー 
+		<form action="300staff/310salesList.html" method="get">
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+-->
+
+		<!-- 共通メニュー  -->
+		<form action="../000login.html" method="get">
+			<button type="submit" class="menuBtn">ログアウト</button>
+		</form>
+	</div>
+	
+	<div class="box" id="content">
+		<h3>売上一覧</h3>
+		<div class="flex">
+			<div>
+				<form action="212salesSummaryByItem.html" method="post">
+					<button type="submit">商品別売上</button>
+				</form>
+			</div>
+			<div>
+				<form action="213salesSummaryByCustomer.html" method="post">
+					<button type="submit">顧客別売上</button>
+				</form>
+			</div>
+			<div>
+				<form action="214salesSummaryByItemGenre.html" method="post">
+					<button type="submit">商品区分別売上</button>
+				</form>
+			</div>
+			<div>
+				<form action="215salesSummaryByStaff.html" method="post">
+					<button type="submit">課員別売上</button>
+				</form>
+			</div>
+			<div>
+				<form action="216salesSummaryByDate.html" method="post">
+					<button type="submit">日付別売上</button>
+				</form>
+			</div>
+		</div>
+		<span class="error">エラーメッセージ表示</span>
+		<table>
+			<tr class="hd2">
+				<th>No.</th>
+				<th>課員</th>
+				<th>売上日</th>
+				<th>顧客</th>
+				<th>売上明細確認</th>
+			</tr>
+			<tr class="row">
+				<td class="c0">1</td>
+				<td class="c4">平川　太郎</td>
+				<td class="c3">2020-12-01</td>
+				<td class="c3">新橋商店</td>
+				<td>
+					<form action="211salesDetailList.html" method="post">
+						<button type="submit" class="">明細確認</button>
+					</form>
+				</td>
+			</tr>
+			<tr class="row">
+				<td class="c0">2</td>
+				<td class="c4">平川　太郎</td>
+				<td class="c3">2020-12-02</td>
+				<td class="c3">虎ノ門商事</td>
+				<td>
+					<form action="211salesDetailList.html" method="post">
+						<button type="submit" class="">明細確認</button>
+					</form>
+				</td>
+			</tr>
+			<tr class="row">
+				<td class="c0">3</td>
+				<td class="c4">大手　次郎</td>
+				<td class="c3">2020-12-01</td>
+				<td class="c3">虎ノ門商事</td>
+				<td>
+					<form action="211salesDetailList.html" method="post">
+						<button type="submit" class="">明細確認</button>
+					</form>
+				</td>
+			</tr>
+			<tr class="row">
+				<td class="c0">4</td>
+				<td class="c4">大手　次郎</td>
+				<td class="c3">2020-12-03</td>
+				<td class="c3">霞が関産業</td>
+				<td>
+					<form action="211salesDetailList.html" method="post">
+						<button type="submit" class="">明細確認</button>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
+</body>
+</html>

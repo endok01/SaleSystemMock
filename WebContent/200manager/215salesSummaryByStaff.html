@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
+
+	<div class="box" id="menu">
+		<span>ユーザ名さん</span>
+
+		<!-- マネージャメニュー  -->
+		<form action="210salesList.html" method="get" >
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+		<form action="260customerList.html" method="get">
+			<button type="submit" class="menuBtn">顧客一覧</button>
+		</form>
+		<form action="220itemList.html" method="get">
+			<button type="submit" class="menuBtn">商品一覧</button>
+		</form>
+		<form action="240itemGenreList.html" method="get">
+			<button type="submit" class="menuBtn">商品区分一覧</button>
+		</form>
+
+<!-- ユーザメニュー 
+		<form action="300staff/310salesList.html" method="get">
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+-->
+
+		<!-- 共通メニュー  -->
+		<form action="../000login.html" method="get">
+			<button type="submit" class="menuBtn">ログアウト</button>
+		</form>
+	</div>
+
+	<div class="box"  id="content">
+		<h3>課員別売上金額集計</h3>
+		<span class="error">エラーメッセージ表示</span>
+		<table>
+			<tr class="hd2">
+				<th>No.</th>
+				<th>課員コード</th>
+				<th>課員名</th>
+				<th>売上合計額</th>
+			</tr>
+			<tr class="row">
+				<td class="c0">1</td>
+				<td class="c4">u003</td>
+				<td class="c3">平川　太郎</td>
+				<td class="c0">6,500</td>
+			</tr>
+			<tr class="row">
+				<td class="c0">2</td>
+				<td class="c4">u004</td>
+				<td class="c3">大手　次郎</td>
+				<td class="c0">14,900</td>
+			</tr>
+		</table>
+	</div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
+</body>
+</html>
