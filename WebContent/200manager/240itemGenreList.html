@@ -41,27 +41,49 @@
 
 	<div class="box"  id="content">
 		<h3>商品区分一覧</h3>
-	 	<span th:text="${errormessage}" th:class="error"></span>
-		<form th:action="@{/Mgr/itemGenreCre}" method="post"><button type="submit">商品区分新規登録</button></form>
-		 	<table>
-				<tr class="hd2">
-			<th>No.</th>
-			<th>商品区分コード</th>
-			<th>商品区分</th>
-			<th>変更</th>
-		</tr>
-		<tr th:each="itemGenre,cnt:${itemGenreList}" class="row">
-			<td th:text="${cnt.count}" class="c0"/>
-			<td th:text="${itemGenre.itemGenreCode}" class="c4"/>
-			<td th:text="${itemGenre.itemGenreName}" class="c3"/>
-			<td>
-				<form th:action="@{'/Mgr/itemGenreUpd/'+${itemGenre.itemGenreCode}}" method="post">
-					<button type="submit" id="upd" class="">変更</button>
-				</form>
-			</td>
-		</tr>
-	</table>
-</div>
+		<span class="error">エラーメッセージ表示</span>
+		<form action="241itemGenreCre.html" method="post">
+			<button type="submit">商品区分新規登録</button>
+		</form>
+		<table>
+			<tr class="hd2">
+				<th>No.</th>
+				<th>商品区分コード</th>
+				<th>商品区分</th>
+				<th>変更</th>
+			</tr>
+			<tr class="row">
+				<td class="c0">1</td>
+				<td class="c4">00000001</td>
+				<td class="c3">コピー用紙</td>
+				<td>
+					<form action="245itemGenreUpd.html" method="post">
+						<button type="submit" class="">変更</button>
+					</form>
+				</td>
+			</tr>
+			<tr class="row">
+				<td class="c0">2</td>
+				<td class="c4">00000002</td>
+				<td class="c3">クリアファイル</td>
+				<td>
+					<form action="245itemGenreUpd.html" method="post">
+						<button type="submit" class="">変更</button>
+					</form>
+				</td>
+			</tr>
+			<tr class="row">
+				<td class="c0">3</td>
+				<td class="c4">00000003</td>
+				<td class="c3">付箋</td>
+				<td>
+					<form action="245itemGenreUpd.html" method="post">
+						<button type="submit" class="">変更</button>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
 	<footer id="footer">
 		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
 	</footer>
