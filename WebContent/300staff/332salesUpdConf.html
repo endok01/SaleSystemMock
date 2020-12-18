@@ -1,53 +1,121 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
-      th:replace="~{commons/layout :: layout(~{::body})}">
+<html>
 <head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="box">
-<h3>売上変更確認</h3>
-	<span th:text="${errormessage}" th:class="error"></span>
-	<form th:action="@{/Staff/saleUpdExe}" th:object="${salesForm}" method="post">
-<!--/* サーバへ送信するデータの設定 */-->
-		<input type="hidden" th:field="*{salesId}" name="salesId"/>
-		<input type="hidden" th:field="*{mtCustomer.customerCode}" name="customerCode"/>
-		<input type="hidden" th:field="*{salesDateString}" name="salesDateString"/>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
 
-		<table>
-			<tr>
-				<th>顧客</th>
-				<td class="left" th:text="*{mtCustomer.customerName}"/>
-			</tr>
-			<tr>
-				<th>売上日</th>
-				<td class="left" th:text="*{salesDateString}"/>
-			</tr>
-		</table>
+	<div class="box" id="menu">
+		<span>ユーザ名さん</span>
 
-		<table>
-			<tr class="hd2">
-				<th>商品</th>
-				<th>単価</th>
-				<th>数量</th>
-				<th>売上額</th>
-			</tr>
-			<tr th:each="s, status : ${salesForm.salesItemForm}" class="row">		
-				<td class="left" th:text="${s.itemName}"/>
-				<td class="c0" th:text="${#numbers.formatInteger(s.price, 1, 'COMMA')}"/>
-				<td class="c0" th:text="${#numbers.formatInteger(s.quantity, 1, 'COMMA')}"/>
-				<td class="c0">
-					<span th:text="${#numbers.formatInteger(s.price*s.quantity, 1, 'COMMA')}"></span>
-					<input type="hidden" th:field="*{salesItemForm[__${status.index}__].detailId}" name="detailId" />
-					<input type="hidden" th:field="*{salesItemForm[__${status.index}__].itemCode}" name="itemCode" />
-					<input type="hidden" th:field="*{salesItemForm[__${status.index}__].price}" name="price" />
-					<input type="hidden" th:field="*{salesItemForm[__${status.index}__].quantity}" name="quantity" />
-				</td>
-			</tr>
+<!-- マネージャメニュー
+		<form action="210salesList.html" method="get" >
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+		<form action="260customerList.html" method="get">
+			<button type="submit" class="menuBtn">顧客一覧</button>
+		</form>
+		<form action="220itemList.html" method="get">
+			<button type="submit" class="menuBtn">商品一覧</button>
+		</form>
+		<form action="240itemGenreList.html" method="get">
+			<button type="submit" class="menuBtn">商品区分一覧</button>
+		</form>
+-->
 
-		</table>
-		<button type="submit" class="menuBtn">変更</button>
-	</form>
-</div>
+		<!-- ユーザメニュー -->
+		<form action="310salesList.html" method="get">
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+
+		<!-- 共通メニュー  -->
+		<form action="../000login_Staff.html" method="get">
+			<button type="submit" class="menuBtn">ログアウト</button>
+		</form>
+	</div>
+
+	<div class="box" id="content">
+		<h3>売上変更確認</h3>
+		<span class="error">エラーメッセージ表示</span>
+		<form action="310salesList.html" method="post">
+
+			<table>
+				<tr>
+					<th>顧客</th>
+					<td class="left">新橋商店</td>
+				</tr>
+				<tr>
+					<th>売上日</th>
+					<td class="left">2020-12-01</td>
+				</tr>
+			</table>
+	
+			<table>
+				<tr class="hd2">
+					<th>商品</th>
+					<th>単価</th>
+					<th>数量</th>
+					<th>売上額</th>
+				</tr>
+				<tr class="row">
+					<td>クリアファイル 10枚P</td>
+					<td class="c0">100</td>
+					<td class="c0">2</td>
+					<td class="c0">200</td>
+				</tr>
+				<tr class="row">
+					<td>クリアファイル 100枚P</td>
+					<td class="c0">900</td>
+					<td class="c0">0</td>
+					<td class="c0">0</td>
+				</tr>
+				<tr class="row">
+					<td>コピー用紙A4 01</td>
+					<td class="c0">3,000</td>
+					<td class="c0">1</td>
+					<td class="c0">3,000</td>
+				</tr>
+				<tr class="row">
+					<td>コピー用紙A3 01</td>
+					<td class="c0">3,100</td>
+					<td class="c0">0</td>
+					<td class="c0">0</td>
+				</tr>
+				<tr class="row">
+					<td>コピー用紙B5 01</td>
+					<td class="c0">2,900</td>
+					<td class="c0">0</td>
+					<td class="c0">0</td>
+				</tr>
+				<tr class="row">
+					<td>付箋紙 大 10P</td>
+					<td class="c0">700</td>
+					<td class="c0">0</td>
+					<td class="c0">0</td>
+				</tr>
+				<tr class="row">
+					<td>付箋紙 中 10P</td>
+					<td class="c0">500</td>
+					<td class="c0">0</td>
+					<td class="c0">0</td>
+				</tr>
+				<tr class="row">
+					<td>付箋紙 小 10P</td>
+					<td class="c0">500</td>
+					<td class="c0">0</td>
+					<td class="c0">0</td>
+				</tr>
+			</table>
+			<button type="submit" class="menuBtn">変更</button>
+		</form>
+	</div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
 </body>
 </html>

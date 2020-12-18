@@ -1,27 +1,70 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
-      th:replace="~{commons/layout :: layout(~{::body})}">
+<html>
 <head>
+	<title>売上管理システム</title>
+	<meta charset="UTF-8">
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="box">
-<h3>顧客別売上金額集計</h3>
-	<p th:text="${msg}"></p>
+	<header id="header">
+		<h1 style="color:blueviolet;">売上管理システム(モックアップ)</h1>
+	</header>
+
+	<div class="box" id="menu">
+		<span>ユーザ名さん</span>
+
+<!-- マネージャメニュー
+		<form action="210salesList.html" method="get" >
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+		<form action="260customerList.html" method="get">
+			<button type="submit" class="menuBtn">顧客一覧</button>
+		</form>
+		<form action="220itemList.html" method="get">
+			<button type="submit" class="menuBtn">商品一覧</button>
+		</form>
+		<form action="240itemGenreList.html" method="get">
+			<button type="submit" class="menuBtn">商品区分一覧</button>
+		</form>
+-->
+
+		<!-- ユーザメニュー -->
+		<form action="310salesList.html" method="get">
+			<button type="submit" class="menuBtn">売上一覧</button>
+		</form>
+
+		<!-- 共通メニュー  -->
+		<form action="../000login_Staff.html" method="get">
+			<button type="submit" class="menuBtn">ログアウト</button>
+		</form>
+	</div>
+	
+	<div class="box" id="content">
+		<h3>顧客別売上金額集計</h3>
+		<span class="error">エラーメッセージ表示</span>
 	 	<table>
-		<tr class="hd2">
-			<th>No.</th>
-			<th>顧客コード</th>
-			<th>顧客名</th>
-			<th>売上合計額</th>
-		</tr>
-		<tr th:each="sale,cnt:${salesList}" class="row">
-			<td th:text="${cnt.count}" class="c0"/>
-			<td th:text="${sale.code}" class="c4"/>
-			<td th:text="${sale.name}" class="c3"/>
-			<td th:text="${#numbers.formatInteger(sale.total, 1, 'COMMA')}" class="c0"/>
-		</tr>
-	</table>
-</div>
+			<tr class="hd2">
+				<th>No.</th>
+				<th>顧客コード</th>
+				<th>顧客名</th>
+				<th>売上合計額</th>
+			</tr>
+			<tr class="row">
+				<td class="c0">1</td>
+				<td class="c4">C0000001</td>
+				<td class="c3">新橋商店</td>
+				<td class="c0">3,000</td>
+			</tr>
+			<tr class="row">
+				<td class="c0">2</td>
+				<td class="c4">C0000002</td>
+				<td class="c3">虎ノ門商事</td>
+				<td class="c0">3,500</td>
+			</tr>
+		</table>
+	</div>
+	<footer id="footer">
+		<address>Copyright &copy; 新入社員研修株式会社 All Rights Reserved.</address>
+	</footer>
 </body>
 </html>
